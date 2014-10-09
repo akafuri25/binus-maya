@@ -1,0 +1,31 @@
+{
+	"name": "Binus Maya New Tab",
+	"version": "0.1",
+	"manifest_version": 2,
+	"description": "Binus maya schedule on your new tab of Google chrome",
+	"permissions": [
+		"bookmarks",
+		"chrome://favicon/",
+		"topSites",
+		"management",
+		"tabs",
+		"fontSettings",
+		"sessions",
+		"http://*.binus.ac.id/*",
+    	"storage"
+	],
+	"chrome_url_overrides":
+	{
+		"newtab": "dist/newtab.html"
+	},
+	"web_accessible_resources": [
+		"newtab.html"
+	],
+	"content_scripts": [
+		{
+			"matches": ["http://*.binus.ac.id/*"],
+			"js": ["dist/vendor/jquery.min.js", "dist/bimay.js"]
+		}
+	]
+
+}
