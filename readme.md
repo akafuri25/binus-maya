@@ -1,6 +1,6 @@
 # Binus maya for Google chrome new tab page
 
-![](https://raw.githubusercontent.com/pedox/kaskus-utilities/master/logo.png)
+![](https://raw.githubusercontent.com/pedox/binus-maya/master/logo.png)
 
 what feature ?
 
@@ -8,7 +8,7 @@ what feature ?
 
 ### Screenshoot
 
-![](https://raw.githubusercontent.com/pedox/kaskus-utilities/master/screenshoot.png)
+![](https://raw.githubusercontent.com/pedox/binus-maya/master/screenshoot.png)
 
 ### How to use ?
 
