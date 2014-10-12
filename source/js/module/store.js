@@ -23,11 +23,23 @@ module.exports = {
 			if(data.bimay_schedule.length) {
 				$.each(data.bimay_schedule, function(i, d) {
 
+					//Make short code
+					if(d.state.split(" ")[1]) {
+						var state = '';
+						var sta = d.state.split(" ");
+						for(i=0; i < sta.length;i++) {
+							state += sta[i][0];
+						}
+					} else {
+						var state = d.state;
+					}
+
 					elm.find("ul").append(
 					'<li>'
 				+		'<p class="time">' + d.date + '</p>'
 				+		'<p class="tim">' + d.time + '</p>'
 				+		'<p class="kelas">' + d.clas + '</p>'
+				+		'<p class="state" title="' + d.state + '">' + state + '</p>'
 				+		'<p class="course">' + d.course.split('-')[1] + '</p>'
 				+		'<p class="room">' + d.room + '</p>'
 				+		'<p class="campus">' + d.building + '</p>'

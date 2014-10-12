@@ -7,11 +7,14 @@ module.exports = {
 
 	initial: function () {
 		var ini = this;
+		ini._setState("Check Login ...");
 		$.get(ini.bimay + '/', function(data) {
 			ini._cekLogin(data, function(hasil) {
 				if(hasil == false) {
+					ini._setState("");
 					ini._login(data);
 				} else {
+					ini._setState("Stage MyClass ...");
 					ini._loadMyClass(data);
 				}
 				
@@ -51,11 +54,15 @@ module.exports = {
 		/* To much Security */
 		var ini = this;
 		var url = ini.bimay + $(data).find('.itemContent:eq(0) ul li:eq(0) > a').attr('href');
+		ini._setState("Loading My Class ...");
 		$.get(url, function(data) {
-
+			ini._setState("Loading My Class ...");
 			$.get(ini.bimay + $(data).find("#ctl00_cp1_ifrApp").attr('src'), function(data) {
+				ini._setState("Loading stage Frame ...");
 				$.get($(data).find("#ifrApp").attr('src'), function(data) {
+					ini._setState("Loading schedule ...");
 					ini._loadSchedule(data, function(today, next) {
+						ini._setState("");
 						var today = ini._toJson(today);
 						var next  = ini._toJson(next);
 						storage.storeData(today.concat(next));
@@ -110,6 +117,10 @@ module.exports = {
 	_loadingEnd: function(elm) {
 		$(".loading-container").addClass('success');
 		$(elm).removeClass('hide-loading');
+	},
+
+	_setState: function(state) {
+		$(".loading-state").text(state);
 	},
 
 	_toJson: function(data) {

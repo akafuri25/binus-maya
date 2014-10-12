@@ -30,11 +30,11 @@ h1 {
 
 .s-1 {
 	margin: 0;
-	font-size: 80px;
+	font-size: 60px;
 }
 .s-2 {
 	font-weight: 100;
-	font-size: 18px;
+	font-size: 15px;
 }
 
 .footer {
@@ -105,13 +105,20 @@ nav {
 			padding: 9px;
 			color: #BBB;
 			> p {
+				vertical-align: middle;
 				display: table-cell;
 				&.time { width: 180px; }
 				&.tim { width: 100px; }
 				&.kelas { width: 55px; }
 				&.course { width: 340px; }
 				&.campus { width: 70px; }
+				&.room { width: 40px; }
+				&.state { width: 40px; }
 			}
 		}
 	}
+}
+
+.loading-state {
+	float: left;
 }
